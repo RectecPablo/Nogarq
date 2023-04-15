@@ -1,5 +1,3 @@
-alert("linked");
-
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
@@ -10,3 +8,4 @@ myModal.addEventListener('shown.bs.modal', () => {
 $(document).ready(function() {
   $("#basic-form").validate();
 });
+
