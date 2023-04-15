@@ -185,7 +185,7 @@
     </div>
   </section> <!--fin planes-->
   <!--Tecnologias-->
-  <div class="pricing-header mx-auto text-center" id="tecnologias">
+  <div class="tech-header p-3 pb-md-4 mx-auto text-center" id="tecnologias">
     <h1 class="display-4 fw-normal">Cursos de especialización</h1>
     <p class="fs-5 text-body-secondary">Los mejores cursos si necesitás especializarte. El staff del instituto cuenta con destacados profesionales del mercado de desarrollo y el mundo digital. Contamos como profesores a autores de libros y profesores de calidad internacional. El director del instituto es el Lic. Arthur Firtman, autor de más de 10 libros con 13 traducciones y destacado profesor y divulgador a nivel mundial.</p>
   </div>
@@ -279,17 +279,17 @@
 
             <div class="input-group mb-3">
               <span class="input-group-text">Remitente</span>
-              <input type="text" class="form-control is-invalid" placeholder="Nombre">
-              <input type="text" class="form-control is-invalid" placeholder="Apellido">
+              <input type="text" class="form-control pattern="[a-zA-Z0-9]+" minlength="4" maxlength="10" placeholder="Nombre">
+              <input type="text" class="form-control " placeholder="Apellido">
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text">Correo</span>
-              <input type="text" id="email" name="email" class="form-control is-invalid">
+              <input type="text" id="email" name="email" class="form-control ">
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text">Asunto</span>
-              <input type="text" class="form-control is-invalid">
+              <input type="text" class="form-control ">
             </div>
           </div>
 
@@ -351,32 +351,10 @@
   </footer>
 
   <!--Scrips JS-->
-  <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (() => {
-      'use strict'
 
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      const forms = document.querySelectorAll('.needs-validation')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
-      // Loop over them and prevent submission
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-  </script>
-  <div class="caja1" >
-  <a href="#">Ir a Inicio</a>
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
   
 </body>
 
