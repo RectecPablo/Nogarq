@@ -59,11 +59,11 @@
         <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Nogarq: Academia de Programadores</h1>
         <p class="lead">Todo lo que un programador moderno debería saber y dominar. Desde hace 17 años creando Talento, con los mejores cursos y carreras tanto para Aprender a Programar como para Profesionales, Empresas y Colegios que quieran capacitarse en tecnología.<br> Registrate y se parte de la comunidad de programadores mas grande de latinoamerica.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalOne">
             Registro
           </button>
           <!--modal-->
-          <div class="modal" id="myModal">
+          <div class="modal" id="myModalOne" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
               <div class="modal-content">
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <!-- Modal registro -->
-                <div class="modal-body" data-backdrop="static" data-keyboard="false>
+                <div class="modal-body" data-backdrop="static" data-keyboard="false">
                   <form action="" id="registroUsuario">
                     <div class="mb-3 mt-3">
                       <label for="uname" class="form-label">Usuario:</label>
@@ -264,27 +264,26 @@
 
       <!--Grid column-->
       <div class="col-md-9 mb-md-0 mb-5">
-        <form class="row g-3" id="basic-form" action="" method="GET">
-
+        <form class="row g-3" id="contac-form">
           <!--Grid row-->
           <div class="row">
 
             <div class="input-group mb-3">
               <span class="input-group-text">Remitente</span>
 
-              <input type="text" id="name" pattern=[a-zA-Z0-9]+ minlength="4" maxlength="10" placeholder="Nombre" class="form-control" required>
+              <input type="text" id="name" name="name" pattern=[a-zA-Z0-9]+ minlength="4" maxlength="10" placeholder="Nombre" class="form-control" required>
 
-              <input type="text" id="lastName" attern=[a-zA-Z0-9]+ minlength="4" maxlength="10" placeholder="Apellido" class="form-control" required>
+              <input type="text" id="lastName" name="lastName" attern=[a-zA-Z0-9]+ minlength="4" maxlength="10" placeholder="Apellido" class="form-control" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text">Correo</span>
-              <input id="email" type="email" name="email"  class="form-control" required>
+              <input id="email"  name="email" type="email" class="form-control" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text">Asunto</span>
-              <input type="text" id="asunto" class="form-control" required>
+              <input type="text" id="asunto" name="asunto" class="form-control"  required>
             </div>
           </div>
           <!--Grid row-->
@@ -301,32 +300,31 @@
           </div>
           <!--Grid row Boton-->
           <div class="text-md-left py-4">
-            <button type="submit" class="btn btn-outline-primary" data-toggle="modal" data-target="#envioConfirmado" onclick="newUser()">Enviar</button>
+            <button id="submitButton" type="submit" class="btn btn-outline-primary" data-toggle="modal" data-target="#submitButton">Enviar</button>
           </div>
           <div class="status"></div>
         </div>
         </form>
 
        <!--Modal contacto--> 
-       <div class="modal" tabindex="-1" role="dialog" id="envioConfirmado">
-        <div class="modal-dialog" role="document">
+       <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+          <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Datos del formulario</h4>
             </div>
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
+              <p id="modalData"></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
             </div>
           </div>
         </div>
       </div>
-
+     
 
       <!--Datos contacto-->
       <div class="col-md-3 text-center">
