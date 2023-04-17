@@ -14,10 +14,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <!--Scrips-->
-  <script src="scrip.js"></script>
+  <script src="./script.j"></script>
   <!--Jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </head>
 
 <body>
@@ -42,25 +41,36 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#planes">Planes</a></li>
               <li><a class="dropdown-item" href="#tecnologias">Tecnologías</a></li>
-
             </ul>
           </li>
         </ul>
       </div>
     </div>
+    <!-- <div class="form-check form-switch">
+      <input type="checkbox" class="form-check-input" id="darkSwitch">
+      <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+    </div>
+    <script src="dark-mode-switch.min.js"></script> -->
   </nav>
   <!--Presentación-->
   <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Nogarq: Academia de Programadores</h1>
+        <p class="lead">Todo lo que un programador moderno debería saber y dominar. Desde hace 17 años creando Talento,
+          con los mejores cursos y carreras tanto para Aprender a Programar como para Profesionales, Empresas y Colegios
+          que quieran capacitarse en tecnología.<br> Registrate y se parte de la comunidad de programadores mas grande
+          de latinoamerica.</p>
+
         <h1 class="display-4 fw-bold lh-1 text-body-emphasis">NOGARQ: Academia de Programadores</h1>
         <p class="lead">Todo lo que un programador moderno debería saber y dominar. Desde hace 17 años creando Talento, con los mejores cursos y carreras tanto para Aprender a Programar como para Profesionales, Empresas y Colegios que quieran capacitarse en tecnología.<br> Registrate y se parte de la comunidad de programadores mas grande de latinoamerica.</p>
+
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
           <button type="button" id="botonempezar"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
             Registro
           </button>
           <!--modal-->
-          <div class="modal" id="myModal">
+          <div class="modal" id="myModal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
               <div class="modal-content">
 
@@ -71,6 +81,8 @@
                 </div>
 
                 <!-- Modal registro -->
+                <div class="modal-body" data-backdrop="static" data-keyboard="false">
+                  <form action="" id="registroUsuario">
                 <div class="modal-body">
                   <form action="#" class="was-validated">
                     <div class="mb-3 mt-3">
@@ -81,6 +93,15 @@
                       <div class="invalid-feedback">LLenar este campo.</div>
                     </div>
                     <div class="mb-3">
+ 
+                      <label for="pwd" class="form-label">Contraseña:</label>
+                      <input type="password" class="form-control" id="pwd" minlength="6" maxlength="10"
+                        placeholder="Ingrese Contraseña" name="pswd">
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="myCheck" name="remember">
+                      <label class="form-check-label" for="myCheck">Estoy de acuerdo con informar mis datos de
+                        contacto</label>
                       <label for="pwd" class="form-label">Mail:</label>
                       <input type="email" class="form-control" id="email" placeholder="Ingrese su mail" name="email" required>
                   
@@ -93,14 +114,9 @@
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Necesario para registro</div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Subir</button>
+                    <button type="submit" class="btn btn-primary" onclick="getFormData();">Subir</button>
                   </form>
                 </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-
               </div>
             </div>
           </div>
@@ -109,7 +125,7 @@
         </div>
       </div>
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-        <img class="rounded-lg-3" src="img/connection-relation-communication-svgrepo-com.svg" alt="" width="350px">
+        <img class="rounded-lg-3" src="img/coding-development-programming-svgrepo-com.svg" alt="" width="350px">
       </div>
     </div>
   </div>
@@ -118,7 +134,9 @@
   <section class="planes">
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center" id="planes">
       <h1 class="display-4 fw-normal">Carreras cortas y Cursos para aprender a Programar</h1>
-      <p class="fs-5 text-body-secondary">Sabrás que faltan programadores y hay buenos sueldos. Pero es difícil decidir por dónde empezar y qué lenguaje aprender. Es por esto y en base a nuestra experiencia con ex alumnos, hoy programadores, que separamos el aprendizaje en 3 cursos.</p>
+      <p class="fs-5 text-body-secondary">Sabrás que faltan programadores y hay buenos sueldos. Pero es difícil decidir
+        por dónde empezar y qué lenguaje aprender. Es por esto y en base a nuestra experiencia con ex alumnos, hoy
+        programadores, que separamos el aprendizaje en 3 cursos.</p>
     </div>
 
     <div class="container-md p-3 pb-md-4 mx-auto text-center">
@@ -130,9 +148,11 @@
               <h4 class="my-0 fw-normal">Programacion Web</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$15000<small class="text-body-secondary fw-light">/mes</small></h1>
+              <h1 class="card-title pricing-card-title">$15000<small class="text-body-secondary fw-light">/mes</small>
+              </h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>En 6 meses desarrollá la práctica para ingresar al mercado laboral como Profesional en Programación Web.</li>
+                <li>En 6 meses desarrollá la práctica para ingresar al mercado laboral como Profesional en Programación
+                  Web.</li>
                 <li>2 GB of storage</li>
                 <li>Soporte 24hs</li>
                 <li>Acceso a las clases grabadas</li>
@@ -150,9 +170,11 @@
               <h4 class="my-0 fw-normal">Programacion Java</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$12600<small class="text-body-secondary fw-light">/mes</small></h1>
+              <h1 class="card-title pricing-card-title">$12600<small class="text-body-secondary fw-light">/mes</small>
+              </h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>En 12 meses desarrollá las habilidades para entrar al mercado laboral de Programación con el lenguaje más demandado y buscado.</li>
+                <li>En 12 meses desarrollá las habilidades para entrar al mercado laboral de Programación con el
+                  lenguaje más demandado y buscado.</li>
                 <li>2 GB of storage</li>
                 <li>Soporte 24hs</li>
                 <li>Acceso a las clases grabadas</li>
@@ -170,9 +192,11 @@
               <h4 class="my-0 fw-normal">Programacion Python</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$15000<small class="text-body-secondary fw-light">/mes</small></h1>
+              <h1 class="card-title pricing-card-title">$15000<small class="text-body-secondary fw-light">/mes</small>
+              </h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>En 6 meses conocerás las bases del lenguaje Python, junto con la manipulación de datos Data Science, y Machine Learning.</li>
+                <li>En 6 meses conocerás las bases del lenguaje Python, junto con la manipulación de datos Data Science,
+                  y Machine Learning.</li>
                 <li>10 GB of storage</li>
                 <li>Soporte 24hs</li>
                 <li>Acceso a las clases grabadas</li>
@@ -190,7 +214,10 @@
   <!--Tecnologias-->
   <div class="tech-header p-3 pb-md-4 mx-auto text-center" id="tecnologias">
     <h1 class="display-4 fw-normal">Cursos de especialización</h1>
-    <p class="fs-5 text-body-secondary">Los mejores cursos si necesitás especializarte. El staff del instituto cuenta con destacados profesionales del mercado de desarrollo y el mundo digital. Contamos como profesores a autores de libros y profesores de calidad internacional. El director del instituto es el Lic. Arthur Firtman, autor de más de 10 libros con 13 traducciones y destacado profesor y divulgador a nivel mundial.</p>
+    <p class="fs-5 text-body-secondary">Los mejores cursos si necesitás especializarte. El staff del instituto cuenta
+      con destacados profesionales del mercado de desarrollo y el mundo digital. Contamos como profesores a autores de
+      libros y profesores de calidad internacional. El director del instituto es el Lic. Arthur Firtman, autor de más de
+      10 libros con 13 traducciones y destacado profesor y divulgador a nivel mundial.</p>
   </div>
   <div class="container-md d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
     <div class="first-colum d-flex flex-column">
@@ -266,6 +293,7 @@
     </div>
   </div>
   <!--formulario contacto--->
+
   <section class="container-md" id="contacto">
     <h2 class="h1-responsive font-weight-bold text-center my-4">Invierta en su Futuro - Contactenos</h2>
     <!--descripcion-->
@@ -275,69 +303,68 @@
 
       <!--Grid column-->
       <div class="col-md-9 mb-md-0 mb-5">
-        <form class="row g-3" id="basic-form" action="" method="post">
-
+        <form class="row g-3" id="contac-form">
           <!--Grid row-->
           <div class="row">
 
             <div class="input-group mb-3">
               <span class="input-group-text">Remitente</span>
 
-              <input type="text" id="name" pattern=[a-zA-Z0-9]+ minlength="4" maxlength="10" placeholder="Nombre" class="form-control" required>
+              <input type="text" id="nombre" name="nombre" pattern=[a-zA-Z0-9]+ minlength="4" maxlength="10"
+                placeholder="Nombre" class="form-control" required>
 
-              <input type="text" id="lastName" attern=[a-zA-Z0-9]+ minlength="4" maxlength="10" placeholder="Apellido" class="form-control" required>
+              <input type="text" id="lastName" name="apellido" attern=[a-zA-Z0-9]+ minlength="4" maxlength="10"
+                placeholder="Apellido" class="form-control" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text">Correo</span>
-              <input id="email" type="email" name="email"  class="form-control" required>
+              <input id="email" name="email" type="email" class="form-control" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text">Asunto</span>
-              <input type="text" id="asunto" class="form-control" required>
+              <input type="text" id="asunto" name="asunto" class="form-control" required>
             </div>
           </div>
-
-
-
           <!--Grid row-->
           <div class="row">
-
             <!--Grid column-->
             <div class="col-md-12">
 
               <div class="md-form">
                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
-                  placeholder="Su Mensaje aquí" ></textarea>
+                  placeholder="Su Mensaje aquí"></textarea>
               </div>
 
             </div>
           </div>
-          <!--Grid row-->
+          <!--Grid row Boton-->
           <div class="text-md-left py-4">
-            <button type="submit" class="btn btn-outline-primary" data-toggle="modal" data-target="#envioConfirmado">Enviar</button>
+            <button id="abrirModal" type="submit" class="btn btn-outline-primary" data-toggle="modal"
+              data-target="#abrirModal">Enviar</button>
           </div>
           <div class="status"></div>
-        </div>
+      </div>
+      </form>
 
-        </form>
-
-       <!--Modal contacto--> 
-       <div class="modal" tabindex="-1" role="dialog" id="envioConfirmado">
-        <div class="modal-dialog" role="document">
+      <!--Modal contacto-->
+      <div id="contactModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+          <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Datos del formulario</h4>
             </div>
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
+              <p>Nombre: <span id="modalNombre"></span></p>
+              <p>Nombre: <span id="modalApellido"></span></p>
+              <p>Nombre: <span id="modalEmail"></span></p>
+              <p>Nombre: <span id="modalAsunto"></span></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
             </div>
           </div>
         </div>
@@ -347,6 +374,19 @@
       <!--Datos contacto-->
       <div class="col-md-3 text-center">
         <ul class="list-unstyled mb-0">
+          <li>
+            <img src="img/contact-pin-location-svgrepo-com.svg" alt="localidad" width="42px">
+            <p>Algún lugar 0123 Planeta Tierra</p>
+          </li>
+
+          <li>
+            <img src="img/contact-phone-talking-svgrepo-com.svg" alt="localidad" width="42px">
+            <p>+ 01 234 567 89</p>
+          </li>
+
+          <li>
+            <img src="img/contact-pin-location-svgrepo-com.svg" alt="localidad" width="42px">
+            <p>contact@email.com</p>
           <li><i class="bi bi-geo-alt-fill"></i>
             <p>Thames 2445 caba</p>
           </li>
@@ -356,12 +396,13 @@
           </li>
 
           <li><i class="bi bi-envelope-at"></i>
-            <p>nogarqdevelopment@gmail.com</p>
+            <p>nogarqdevelopment@gmail.com</p
           </li>
         </ul>
       </div>
     </div>
   </section>
+
 
   <footer class="footer mt-auto py-3 bg-body-tertiary text-center">
     <div class="container justify-content-center align-content-center">
@@ -374,10 +415,8 @@
 
   <!--Scrips JS-->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </body>
 
 </html>
